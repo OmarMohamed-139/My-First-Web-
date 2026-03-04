@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستقبل الويب والذكاء الاصطناعي</title>
+    <style>
+        :root {
+            --primary: #0a192f;
+            /* أزرق غامق جداً */
+            --accent: #64ffda;
+            /* لون فيروزي مضيء */
+            --text-main: #ccd6f6;
+            --text-dark: #112240;
+            /* خلفية احتياطية في حال لم يتم تحميل الصورة */
+            --bg-fallback: #020c1b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text-main);
+
+            /* --- إعدادات صورة الخلفية --- */
+            background-color: var(--bg-fallback);
+            /* لون احتياطي */
+            background-image:
+                /* طبقة تظليل داكنة فوق الصورة لتحسين قراءة النص */
+                linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.95)),
+                /* رابط الصورة (صورة شبكة عصبية ورموز برمجية) */
+                url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            /* تغطية الشاشة بالكامل */
+            background-position: center;
+            /* توسيط الصورة */
+            background-attachment: fixed;
+            /* تثبيت الخلفية عند التمرير */
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(10, 25, 47, 0.7);
+            /* خلفية رأسية شبه شفافة */
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            color: var(--accent);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+        }
+
+        header p {
+            color: #8892b0;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 850px;
+            padding-bottom: 50px;
+        }
+
+        /* --- تنسيق القائمة التفاعلية (أسلوب الزجاج) --- */
+        .accordion-item {
+            /* تأثير Glassmorphism */
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            /* تضبيب الخلفية خلف العنصر */
+            -webkit-backdrop-filter: blur(5px);
+
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(100, 255, 218, 0.4);
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .accordion-header {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: var(--text-main);
+        }
+
+        .accordion-header.active {
+            color: var(--accent);
+        }
+
+        /* الجزء المخفي */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+            /* حركة أنعم */
+        }
+
+        .content-inner {
+            padding: 0 25px 25px 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            line-height: 1.9;
+            color: #a8b2d1;
+        }
+
+        /* تنسيق الكلمات التوضيحية (AI, Web) */
+        .content-inner strong {
+            color: white;
+            border-bottom: 1px dashed var(--accent);
+        }
+
+        /* أيقونة السهم */
+        .icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+            color: #8892b0;
+        }
+
+        .active .icon {
+            transform: rotate(180deg);
+            color: var(--accent);
+        }
+
+        ul {
+            padding-right: 25px;
+            list-style-type: none;
+            /* إزالة النقاط التقليدية */
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        /* إضافة رمز مخصص قبل كل عنصر في القائمة */
+        li::before {
+            content: "▹";
+            /* رمز سهم صغير */
+            color: var(--accent);
+            position: absolute;
+            right: -20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>بناء الويب في عصر الذكاء الاصطناعي</h1>
+        <h2>تعلم الأدوات الأساسية لتطوير تطبيقات ذكية<h2>
+                <h3> هذا الموقع تحت اشرف ENG :Omar Mohamed Ezzat </h3>
+    </header>
+
+    <img src="download (1).jpg" Css Html JS" width="500" height="300">
+
+    <br>
+    <br>
+    <div class="container">
+
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <span>1. الهيكل الذكي (HTML)</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="content-inner">
+                    <p>اللغة التي تحدد محتوى الصفحة. في عصر الـ <strong>AI</strong>، تعتبر هيكلة البيانات الجيدة أمرًا
+                        حيويًا لتفهم المحركات الذكية محتوى موقعك.</p>
+                    <ul>
+                        <li> تاريخ التأسيس: تم تطويرها بواسطة تيم بيرنرز لي في عام 1991. </li>
+                        <li> الإصدار الحالي: HTML5 هو المعيار الحالي والأكثر استخداماً حالياً. </li>
+                        <li> آلية العمل: تتكون من "وسوم" (Tags) تُكتب بين أقواس زاوية <> وتكون عادةً مزدوجه وسم بدايه
+                                tag ووسم إغلاق /tag. </li>
+                        <img src="6316f4d348cda_----HTML.png.b0ec735790863d7847b677a1be10acd3.png" alt="Html"
+                            width="500" height="300">
+                        <li>
+                            <> لهيكل الأساسي للمستند:
+                                !DOCTYPE html : تعريف إصدار HTML5.
+                                html : وسم الجذر.
+
+                                head : يحتوي على معلومات وصفية (عنوان الصفحة، ترميز النص).
+
+                                body : يحتوي على المحتوى الظاهر للمستخدم. <> لهيكل الأساسي للمستند:
+                                    !DOCTYPE html : تعريف إصدار HTML5.
+                                    html : وسم الجذر.
+
+                                    head : يحتوي على معلومات وصفية (عنوان الصفحة، ترميز النص).
+
+                                    body : يحتوي على المحتوى الظاهر للمستخدم.
+                        </li>
+
+                        <li> السمات (Attributes): توفر معلومات إضافية للعناصر، مثل ssimg src="image.jpg". </li>
+                        </li>
+                        <li>بناء النصوص والروابط والقوائم.</li>
+                        <li>دمج الوسائط (صور وفيديو).</li>
+                        <li>استخدام علامات (Semantic HTML) لتحسين SEO.</li>
+                        <li> و اي امر يكتب في الهيكل الاساسي في صفحه لغه Html يكتب في <>
+                        </li>
+                        <img src="html-1-1-1024x614.webp" alt="Html" width="500" height="300">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <span>2. التصميم المتجاوب (CSS)</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="content-inner">
+                    <p>تمنح الموقع مظهره. يمكنك استخدام أدوات التصميم الحديثة لبناء واجهات تحاكي تصميمات الذكاء
+                        الاصطناعي المعقدة بنعومة.</p>
+                    <ul>
+                        <li>تحديد الألوان والخطوط العصرية.</li>
+                        <li>إنشاء شبكات مرنة (Grid & Flexbox).</li>
+                        <li>إضافة تأثيرات التضبيب والشفافية الرائعة.</li>
+                        <img src="download.jpg" alt="Css" width="500" height="300">
+                        <li>
+
+
+
+                            طرق إدراج CSS:
+                            خارجي (External): ملف .css منفصل (الأفضل).
+                            داخلي (Internal): داخل وسم style في رأس الصفحة.
+                            مباشر (Inline): داخل وسم HTML باستخدام خاصية style.
+
+
+
+
+
+
+                        </li>
+                        <li>
+
+
+                            مكونات قاعدة CSS: تتكون من محدد (Selector) لاستهداف عنصر HTML، وخصائص (Property) وقيم
+                            (Value) للتنسيق [مثال: `h1 {color: blue;`] https://www.ar-wp.com/css/}.
+
+
+                        </li>
+
+                        <li>
+
+                            التطور: بدأت عام 1996 وتطورت لتصل إلى CSS3 و CSS4، التي تدعم حركات (Animations)، تدرجات
+                            لونية، وتخطيطات متقدمة مثل Flexbox و Grid.
+
+                        </li>
+
+                        <img src="download.png" alt="Css" width="500" height="300">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <span>3. منطق التفاعل والـ AI (JavaScript)</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="content-inner">
+                    <p>لغة البرمجة التي تجعل الموقع حياً. هي الجسر الذي يربط موقعك بنماذج الذكاء الاصطناعي القوية (مثل
+                        ChatGPT API).</p>
+                    <ul>
+                        <li>التحكم في عناصر الصفحة ديناميكياً.</li>
+                        <li>الاتصال بالخوادم وجلب البيانات (APIs).</li>
+                        <li>تشغيل نماذج الـ AI البسيطة مباشرة في المتصفح.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // اختيار كل رؤوس القوائم
+        const headers = document.querySelectorAll('.accordion-header');
+
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+
+                // غلق أي قائمة أخرى مفتوحة
+                headers.forEach(otherHeader => {
+                    if (otherHeader !== header && otherHeader.classList.contains('active')) {
+                        otherHeader.classList.remove('active');
+                        otherHeader.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+
+                // تبديل القائمة الحالية
+                header.classList.toggle('active');
+
+                if (header.classList.contains('active')) {
+                    // نستخدم scrollHeight للحصول على الارتفاع الكامل للمحتوى
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
