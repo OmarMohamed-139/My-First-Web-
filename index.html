@@ -417,53 +417,58 @@
 
 
 
-<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <style>
-        /* حاوية الشريط */
+        /* حاوية الشريط الأساسية */
         .scrolling-footer {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            /* تقليل درجة التعتيم لزيادة الشفافية */
-            background: rgba(255, 255, 255, 0.05); 
-            /* تأثير ضبابي خفيف للخلفية */
-            backdrop-filter: blur(5px); 
-            -webkit-backdrop-filter: blur(5px);
-            color: #fff;
-            padding: 20px 0; /* زيادة العرض */
+            /* خلفية شفافة جداً مع تأثير ضبابي */
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: #ffffff;
+            padding: 25px 0; /* زيادة العرض ليعطي مظهراً فخماً */
             overflow: hidden;
             white-space: nowrap;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            z-index: 9999;
+            z-index: 1000;
         }
 
         /* حاوية النص المتحرك */
         .scrolling-content {
             display: inline-block;
-            /* تم تقليل الوقت من 30s إلى 15s لجعل الحركة أسرع */
-            animation: scroll-left 15s linear infinite;
+            /* تم زيادة الوقت إلى 40 ثانية لجعلها أبطأ وأكثر راحة */
+            animation: scroll-left 40s linear infinite;
         }
 
-        /* تعريف الحركة */
+        /* ميزة التوقف عند مرور الماوس */
+        .scrolling-footer:hover .scrolling-content {
+            animation-play-state: paused;
+            cursor: pointer;
+        }
+
+        /* تعريف حركة الانسياب */
         @keyframes scroll-left {
             from { transform: translateX(100%); }
             to { transform: translateX(-100%); }
         }
 
-        /* تنسيق الجمل */
+        /* تنسيق النصوص */
         .info-item {
-            margin-left: 60px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.5); /* ظل للنص ليظهر بوضوح فوق أي خلفية */
+            margin-left: 80px; /* مسافة أكبر بين الجمل */
+            font-size: 1.25rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
         }
 
         .highlight {
-            color: #4affff; /* لون فسفوري جذاب */
+            color: #00ffcc; /* لون أخضر مائي مميز للتقنيات */
+            font-weight: bold;
         }
     </style>
 </head>
@@ -471,16 +476,13 @@
 
     <footer class="scrolling-footer">
         <div class="scrolling-content">
-            <span class="info-item">🚀 <span class="highlight">الذكاء الاصطناعي</span> يغير وجه البرمجة التقليدية بسرعة مذهلة.</span>
-            <span class="info-item">💻 تعلم <span class="highlight">Git</span> هو أهم مهارة للعمل الجماعي في المشاريع الكبرى.</span>
-            <span class="info-item">🌐 الـ <span class="highlight">Full Stack</span> مبرمج يتقن بناء الواجهات وقواعد البيانات معاً.</span>
-            <span class="info-item">⚡ <span class="highlight">React</span> هي المكتبة الأكثر طلباً في سوق العمل لتطوير الويب.</span>
-            <span class="info-item">🔒 <span class="highlight">الأمن السيبراني</span> يبدأ بكتابة كود نظيف ومحمي من الثغرات.</span>
+            <span class="info-item">💡 هل تعلم؟ <span class="highlight">البرمجة الكائنية (OOP)</span> تساعد في تنظيم الكود وإعادة استخدامه بذكاء.</span>
+            <span class="info-item">🛠️ تقنية <span class="highlight">Docker</span> تسمح لك بتشغيل تطبيقك في أي بيئة دون مشاكل التوافق.</span>
+            <span class="info-item">🚀 سرعة الموقع تعتمد بشكل كبير على <span class="highlight">تحسين الصور</span> وكتابة كود CSS نظيف.</span>
+            <span class="info-item">🧠 <span class="highlight">الخوارزميات</span> هي المحرك الفعلي خلف محركات البحث وأنظمة التوصية.</span>
+            <span class="info-item">🌐 مستقبل الويب يتجه نحو <span class="highlight">Web3</span> واللامركزية في البيانات.</span>
         </div>
     </footer>
-
-</body>
-</html>
 
 
 
