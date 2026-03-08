@@ -182,28 +182,95 @@
 
 
 
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
 
+        <button id="main-coin-btn" onclick="triggerFlip()" style="
+        background: transparent; 
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        outline: none;
+        width: 250px;  /* مساحة اللمس واسعة لراحة المستخدم */
+        height: 250px; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 1200px; /* لإعطاء عمق احترافي للتدوير */
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        transition: opacity 0.4s ease; /* تنعيم ظهور وإخفاء الزرار */
+    ">
 
+            <div id="coin-inner" style="
+            position: relative; 
+            width: 150px; 
+            height: 150px; 
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            transform-style: preserve-3d;
+            pointer-events: none; /* الضغط يمر للزرار الخلفي الواسع */
+        ">
 
-    <div
-        style="position: absolute; top: 20px; left: 20px; width: 150px; height: 150px; perspective: 1000px; z-index: 10;">
+                <div
+                    style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 50%; border: 4px solid #00d2ff; overflow: hidden; background: #000; box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);">
+                    <img src="file_00000000fd5c71fd952d358ccf8eecd8.png"
+                        style="width: 100%; height: 100%; object-fit: cover; -webkit-user-drag: none;">
+                </div>
 
-        <div style="position: relative; width: 100%; height: 100%; transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform-style: preserve-3d; cursor: pointer;"
-            onmouseover="this.style.transform='rotateY(180deg)';" onmouseout="this.style.transform='rotateY(0deg)';"
-            onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-            <div
-                style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 50%; border: 4px solid #00d2ff; overflow: hidden; background: #000;">
-                <img src="file_00000000fd5c71fd952d358ccf8eecd8.png"
-                    style="width: 100%; height: 100%; object-fit: cover;">
+                <div
+                    style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 50%; border: 4px solid #00d9ff; overflow: hidden; transform: rotateY(180deg); background: #000; box-shadow: 0 0 15px rgba(255, 0, 200, 0.3);">
+                    <img src="4.png" style="width: 100%; height: 100%; object-fit: cover; -webkit-user-drag: none;">
+                </div>
+
             </div>
-
-            <div
-                style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 50%; border: 4px solid #ff00c8; overflow: hidden; transform: rotateY(180deg); background: #000;">
-                <img src="4.png" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-
-        </div>
+        </button>
     </div>
+
+    <script>
+        // متغير للتحكم في وقت الانتظار
+        let isLocked = false;
+
+        function triggerFlip() {
+            // التحقق من حالة القفل (Cooldown)
+            if (isLocked) return;
+
+            const coin = document.getElementById('coin-inner');
+            const btn = document.getElementById('main-coin-btn');
+
+            // 1. تفعيل القفل وتغيير الشكل
+            isLocked = true;
+            btn.style.cursor = 'default';
+            btn.style.opacity = '0.5'; // يبهت ليعلم المستخدم أنه متوقف مؤقتاً
+
+            // 2. تنفيذ لفة العملة (180 درجة)
+            coin.style.transform = 'rotateY(180deg)';
+
+            // 3. إعادة العملة لوجهها الأصلي بعد 1.5 ثانية
+            setTimeout(() => {
+                coin.style.transform = 'rotateY(0deg)';
+            }, 5000);
+
+            // 4. فك القفل بعد 10 ثواني كاملة
+            setTimeout(() => {
+                isLocked = false;
+                btn.style.cursor = 'pointer';
+                btn.style.opacity = '1'; // يعود للوضوح الكامل
+                console.log("الزر جاهز للعمل مجدداً!");
+            }, 10000);
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
