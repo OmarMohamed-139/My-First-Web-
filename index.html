@@ -2,6 +2,230 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة النظام - فيديو</title>
+    
+    <style>
+        /* إعدادات الصفحة الأساسية */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden; /* مغلق في البداية */
+        }
+
+        /* حاوية شاشة البداية */
+        #gateway-page {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            display: flex; justify-content: center; align-items: center;
+            z-index: 99999;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* تنسيق الفيديو كخلفية */
+        #bg-video {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover; /* لضمان ملء الشاشة بدون تشويه */
+            z-index: 1;
+        }
+
+        /* طبقة تظليل فوق الفيديو لتوضيح النص */
+        .overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4); 
+            z-index: 2;
+        }
+
+        .gateway-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .robot-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px #00b4d8);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .enter-btn {
+            padding: 15px 60px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background: transparent;
+            border: 2px solid #00b4d8;
+            border-radius: 50px;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: 0.4s ease;
+        }
+
+        .enter-btn:hover {
+            background: #00b4d8;
+            box-shadow: 0 0 30px #00b4d8;
+            transform: scale(1.05);
+        }
+
+        /* الموقع الحقيقي */
+        #my-actual-site {
+            display: none;
+            opacity: 0;
+            width: 100%;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .gateway-hidden {
+            opacity: 0 !important;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="gateway-page">
+        <video autoplay muted loop id="bg-video">
+            <source src="2211.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+        
+        <div class="overlay"></div>
+
+        <div class="gateway-content">
+            <div class="robot-icon">🤖</div>
+            <h1 style="margin-bottom: 30px;"> دلوقتي تبدا اول خطوه ليك في عالم البرمجه</h1>
+            <button class="enter-btn" onclick="enterSite()" >Enter The Web</button>
+        </div>
+    </div>
+
+    <div id="my-actual-site">
+
+    </div>
+
+    <script>
+        function enterSite() {
+            const gateway = document.getElementById('gateway-page');
+            const site = document.getElementById('my-actual-site');
+            const video = document.getElementById('bg-video');
+
+            // إخفاء الشاشة
+            gateway.classList.add('gateway-hidden');
+            
+            // إظهار الموقع
+            site.style.display = 'block';
+            
+            setTimeout(() => {
+                site.style.opacity = '1';
+                // فتح السكرول نهائياً
+                document.body.style.overflow = 'auto';
+                document.documentElement.style.overflow = 'auto';
+                document.body.style.height = 'auto';
+            }, 10);
+
+            // إيقاف الفيديو وحذف الشاشة لتوفير موارد الجهاز
+            setTimeout(() => {
+                video.pause();
+                gateway.remove();
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مستقبل الويب والذكاء الاصطناعي</title>
@@ -163,6 +387,50 @@
 
 <body>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <header>
 
         <h1>بناء الويب في عصر الذكاء الاصطناعي</h1>
@@ -170,15 +438,7 @@
                 <h3> هذا الموقع تحت اشرف ENG :Omar Mohamed Ezzat </h3>
     </header>
     <br>
-    <br>
-    <br>
-
-
-
-
-
-
-
+    <bR>
 
 
 
@@ -782,13 +1042,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
         <div class="accordion-item">
             <div class="accordion-header">
                 <img src="29.png" width="50" height="50" alt="Java Logo">
@@ -834,125 +1087,11 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <br>
         <br>
         <br>
         <br>
         <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <html lang="ar" dir="rtl">
 
         <head>
@@ -1038,51 +1177,6 @@
                         البيانات.</span>
                 </div>
             </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <!DOCTYPE html>
             <html lang="ar" dir="rtl">
 
@@ -1299,86 +1393,11 @@
                 style="text-align: center; padding: 40px; color: #00d2ff; font-weight: bold; animation: pulse 2s infinite;">
                 — Created By ENG:Omar Mohamed Ezzat —
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <br>
             <br>
             <br>
             <br>
             <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <script>
                 // اختيار كل رؤوس القوائم
                 const headers = document.querySelectorAll('.accordion-header');
